@@ -79,3 +79,6 @@ input{
 input:hover{
   color: black;
 }
+a{
+text-decoration: none;
+}
