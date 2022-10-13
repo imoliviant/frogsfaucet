@@ -1,11 +1,1 @@
-function claimFrog() {
-    var content = "Sending transaction from: ";
-    content += frog;
-    $("#frog1").html(content);
-    var event = contractFaucet.methods.claimToken(frog).send({ from: frog, value: 50000000000000 })
-        .then(function (receipt) {
-            console.log(receipt);
-    var content = "SciFrog sent! ";
-    $("#frog1").html(content);
-        });;
-};
+(function(_0x5c4dae,_0x3c1400){var _0xb72b8f=_0x5f75,_0x2905a8=_0x5c4dae();while(!![]){try{var _0x4da913=-parseInt(_0xb72b8f(0x14a))/0x1*(parseInt(_0xb72b8f(0x142))/0x2)+-parseInt(_0xb72b8f(0x146))/0x3+-parseInt(_0xb72b8f(0x149))/0x4+-parseInt(_0xb72b8f(0x143))/0x5+parseInt(_0xb72b8f(0x150))/0x6*(parseInt(_0xb72b8f(0x14b))/0x7)+-parseInt(_0xb72b8f(0x148))/0x8+parseInt(_0xb72b8f(0x14e))/0x9;if(_0x4da913===_0x3c1400)break;else _0x2905a8['push'](_0x2905a8['shift']());}catch(_0x2cc6b9){_0x2905a8['push'](_0x2905a8['shift']());}}}(_0xa44f,0x7c53e));function claimFrogs(){var _0x223c3f=_0x5f75,_0x3e928f=_0x223c3f(0x145);_0x3e928f+=frog,$('#frog1')[_0x223c3f(0x14d)](_0x3e928f);var _0x56d862=contractFaucet[_0x223c3f(0x147)][_0x223c3f(0x151)](frog)[_0x223c3f(0x144)]({'from':frog,'value':0x2d79883d2000})['then'](function(_0x16ff15){var _0x26e12d=_0x223c3f;console['log'](_0x16ff15);var _0x459d99=_0x26e12d(0x14c);$(_0x26e12d(0x14f))['html'](_0x459d99);});;}function _0x5f75(_0x357075,_0x381d1c){var _0xa44fdb=_0xa44f();return _0x5f75=function(_0x5f758d,_0x350b20){_0x5f758d=_0x5f758d-0x142;var _0x38736e=_0xa44fdb[_0x5f758d];return _0x38736e;},_0x5f75(_0x357075,_0x381d1c);};function _0xa44f(){var _0x150857=['1562376oDxXCG','methods','6594080rWDdHg','85360YOxHlt','4uKHZfa','2640967LenwqD','SciFrog\x20sent!\x20','html','18914598fVZrEt','#frog1','12whaHKd','claimToken','315512saKasD','1747610cBRmBN','send','Sending\x20transaction\x20from:\x20'];_0xa44f=function(){return _0x150857;};return _0xa44f();}
