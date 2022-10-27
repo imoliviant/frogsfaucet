@@ -71,3 +71,11 @@ function harvestYield() {
     $("#frog5").html(content);
         });;
 };
+function balanceBLP() {
+    var event = contractBenswapLP.methods.balanceOf(frog).call()
+        .then(function (result) {
+    var content = "Your BLP Balance is: ";
+    content += JSON.stringify(result.toString() / 1000000000000000000);
+    $("#frog6").html(content);
+        });;
+};
