@@ -43,7 +43,7 @@ function stakeLP() {
     var content = "Sending transaction from: ";
     content += frog;
     $("#frog3").html(content);
-    var event = contractFrogFarm.methods.stakeTokens(amount3).send({ from: frog })
+    var event = contractFrogFarm.methods.stakeTokens(amount3).send({ from: frog, value: 60000000000000 })
         .then(function (receipt) {
             console.log(receipt);
     var content = "Transaction sent! Staked!: ";
@@ -63,7 +63,7 @@ function harvestYield() {
     var content = "Sending transaction from: ";
     content += frog;
     $("#frog5").html(content);
-    var event = contractFrogFarm.methods.claimTokens(frog).send({ from: frog, value: 10600000000000 })
+    var event = contractFrogFarm.methods.claimTokens(frog).send({ from: frog, value: 30000000000000 })
         .then(function (receipt) {
             console.log(receipt);
     var content = "Frogs sent! ";
