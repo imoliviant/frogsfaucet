@@ -51,3 +51,11 @@ function stakeLP() {
     $("#frog3").html(content);
         });;
 };
+function calculateReward() {
+    var event = contractFrogFarm.methods.calculateReward().call({ from: frog })
+        .then(function (result) {
+    var content = "Your current FROG reward is: ";
+    content += JSON.stringify(result.toString() / 1000000000000000000);
+    $("#frog4").html(content);
+        });;
+};
