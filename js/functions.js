@@ -36,7 +36,7 @@ function approveLP() {
         });;
 };
 
-function stakeTokens() {
+function stakeLP() {
     var amount1 = $("#frogLPamount").val();
     var amount2 = amount1 *1000000000000000000;
     var amount3 = amount2.toString();
