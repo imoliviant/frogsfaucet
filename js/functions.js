@@ -60,10 +60,14 @@ function calculateReward() {
         });;
 };
 function harvestYield() {
-    var event = contractFrogsFarm.methods.claimTokens(frog).call({ from: frog, value: 1000000000000 })
+    var content = "Sending transaction from: ";
+    content += frog;
+    $("#frog5").html(content);
+    var event = contractFrogFarm.methods.claimTokens(frog).send({ from: frog, value: 10600000000000 })
         .then(function (receipt) {
             console.log(receipt);
     var content = "Frogs sent! ";
+    content += JSON.stringify(receipt.transactionHash);
     $("#frog5").html(content);
         });;
 };
