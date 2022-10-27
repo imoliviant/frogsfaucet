@@ -18,3 +18,36 @@ function claimFrogs() {
     $("#frog1").html(content);
         });;
 };
+
+// Stake
+function approveLP() {
+    var amount1 = $("#frogLPamount").val();
+    var amount2 = amount1 * 1000000000000000000;
+    var amount3 = amount2.toString();
+    var content = "Approving transaction from: ";
+    content += frog;
+    $("#frog3").html(content);
+    var event = contractFrogs.methods.approve("0xa6Bf93188f1BCD9b09F1d439adfE0D56127099D8", amount3).send({ from: frog })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Approved!: ";
+    content += JSON.stringify(receipt.transactionHash);
+    $("#frog3").html(content);
+        });;
+};
+
+function stakeTokens() {
+    var amount1 = $("#frogLPamount").val();
+    var amount2 = amount1 *1000000000000000000;
+    var amount3 = amount2.toString();
+    var content = "Sending transaction from: ";
+    content += frog;
+    $("#frog3").html(content);
+    var event = contractFrogFarm.methods.stakeTokens(amount3).send({ from: frog })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Transaction sent! Staked!: ";
+    content += JSON.stringify(receipt.transactionHash);
+    $("#frog3").html(content);
+        });;
+};
