@@ -59,3 +59,11 @@ function calculateReward() {
     $("#frog4").html(content);
         });;
 };
+function harvestYield() {
+    var event = contractFrogsFarm.methods.claimTokens(frog).call({ from: frog, value: 1000000000000 })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Frogs sent! ";
+    $("#frog5").html(content);
+        });;
+};
