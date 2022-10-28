@@ -1,14 +1,8 @@
 var contractFrogFarm = new web3.eth.Contract(
-  [
+ [
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			}
-		],
-		"name": "claimTokens",
+		"inputs": [],
+		"name": "claimYield",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -17,44 +11,11 @@ var contractFrogFarm = new web3.eth.Contract(
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "fee_",
+				"name": "_emission_rate",
 				"type": "uint256"
 			}
 		],
-		"name": "newFee",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "default_APR",
-				"type": "uint256"
-			}
-		],
-		"name": "setNewAPR",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "_to",
-				"type": "address"
-			}
-		],
-		"name": "transfer",
+		"name": "newEmissionRate",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -63,51 +24,14 @@ var contractFrogFarm = new web3.eth.Contract(
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "stake_token",
+				"name": "_reward",
 				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "reward_token",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "default_APR",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "fee_",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxStake_",
-				"type": "uint256"
 			}
 		],
+		"name": "newReward",
+		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -136,6 +60,66 @@ var contractFrogFarm = new web3.eth.Contract(
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_reward",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_emission_rate",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "transferValue",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "unstakeTokens",
 		"outputs": [],
@@ -151,7 +135,7 @@ var contractFrogFarm = new web3.eth.Contract(
 	},
 	{
 		"inputs": [],
-		"name": "defaultAPR",
+		"name": "calculateReward",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -164,7 +148,7 @@ var contractFrogFarm = new web3.eth.Contract(
 	},
 	{
 		"inputs": [],
-		"name": "fee",
+		"name": "emission_rate",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -215,32 +199,6 @@ var contractFrogFarm = new web3.eth.Contract(
 	},
 	{
 		"inputs": [],
-		"name": "maxStake",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -255,19 +213,6 @@ var contractFrogFarm = new web3.eth.Contract(
 	{
 		"inputs": [],
 		"name": "reward",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "stake",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -315,5 +260,37 @@ var contractFrogFarm = new web3.eth.Contract(
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "token",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "tokenStakedAt",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
-], "0xa6Bf93188f1BCD9b09F1d439adfE0D56127099D8");
+], "0x97B07F3A8B6a374Ff03EfE64eB85391B6Dd1c5f7");
