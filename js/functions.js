@@ -27,7 +27,7 @@ function approveLP() {
     var content = "Approving transaction from: ";
     content += frog;
     $("#frog3").html(content);
-    var event = contractFrogs.methods.approve("0x97B07F3A8B6a374Ff03EfE64eB85391B6Dd1c5f7", amount3).send({ from: frog })
+    var event = contractBenswapLP.methods.approve("0x97B07F3A8B6a374Ff03EfE64eB85391B6Dd1c5f7", amount3).send({ from: frog })
         .then(function (receipt) {
             console.log(receipt);
     var content = "Approved!: ";
