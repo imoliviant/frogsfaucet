@@ -80,7 +80,7 @@ function balanceBLP() {
         });;
 };
 function contractBal() {
-    var event = contractFrogs.methods.balanceOf(frog).call()
+    var event = contractFrogs.methods.balanceOf("0x97B07F3A8B6a374Ff03EfE64eB85391B6Dd1c5f7").call()
         .then(function (result) {
     var content = "Frogs on contract : ";
     content += JSON.stringify(result.toString() / 1000000000000000000);
