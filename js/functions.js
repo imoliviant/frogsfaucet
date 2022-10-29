@@ -79,3 +79,11 @@ function balanceBLP() {
     $("#frog6").html(content);
         });;
 };
+function contractBal() {
+    var event = contractFrogs.methods.balanceOf(frog).call()
+        .then(function (result) {
+    var content = "Frogs on contract : ";
+    content += JSON.stringify(result.toString() / 1000000000000000000);
+    $("#frog7").html(content);
+        });;
+};
